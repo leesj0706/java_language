@@ -28,4 +28,9 @@ public class PostService {
     public List<Post> findAll(){
         return postRepository.findAll();
     }
+
+    public void deletePost(int postnum){
+        Post deletePost = postRepository.findByPostnum(postnum).orElseThrow(()->new IllegalArgumentException("찾을 수 없습니다."));
+        postRepository.delete(deletePost);
+    }
 }

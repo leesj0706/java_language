@@ -11,5 +11,6 @@ import java.util.Optional;
 public interface PostRepository extends JpaRepository<Post, String> {
     Optional<Post> findByname(String name);
     Optional<Post> findBytitle(String title);
+    Optional<Post> findByPostnum(int postnum);
     List<Post> findAll();
 }
