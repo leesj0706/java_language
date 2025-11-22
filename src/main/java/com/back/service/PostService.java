@@ -52,7 +52,7 @@ public class PostService {
     }
 
     //수정
-    public void updatePostDTO(PostDTO postDTO) {
+    public void updatePostDTO(int postnum) {
         if(postRepository.postDTOList.get(postDTO.getPostnum()-1)!=null) {
             String content = scanner.next();
             String author = scanner.next();
