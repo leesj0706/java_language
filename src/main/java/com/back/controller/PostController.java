@@ -4,14 +4,19 @@ import com.back.service.PostService;
 import java.util.Scanner;
 
 public class PostController {
-    public PostService postService;
     Scanner scanner = new Scanner(System.in);
 
-    int usercontentnum = scanner.nextInt();
-
     public void starterController(){
+        PostService postService = new  PostService();
         while(true){
             String usercontent = scanner.nextLine();
+            int usercontentnum = 0;
+            for(int i=0; i<=usercontent.length(); i++){
+                char ch = usercontent.charAt(i);
+                if(48<=ch && ch<=57){
+                    usercontentnum = ch;
+                }
+            }
             if("등록".equals(usercontent)){
                 postService.setPostDTO();
             }

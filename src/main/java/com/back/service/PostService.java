@@ -7,14 +7,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class PostService {
-    public PostRepository postRepository;
+    public PostRepository postRepository = new PostRepository();
     public PostDTO postDTO;
     Scanner scanner = new Scanner(System.in);
-
+    int postnum = 0;
     //등록
     public void setPostDTO() {
         PostDTO postDTO = new PostDTO();
-        int postnum = 0;
         System.out.print("내용 : ");
         String content = scanner.next();
         System.out.print("저자 : ");
@@ -23,6 +22,7 @@ public class PostService {
         postDTO.setPostnum(postnum);
         postDTO.setContent(content);
         postDTO.setAuthor(author);
+        postnum++;
 
         System.out.println(postnum+"번 게시글이 등록되었습니다.");
         postRepository.postDTOList.add(postDTO);
