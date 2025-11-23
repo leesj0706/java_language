@@ -17,7 +17,7 @@ public class PostController {
                 String[] keyvalues = quarry.split("=");
                 String key = keyvalues[0];
                 String value = keyvalues[1];
-                int usercontentnum = Integer.parseInt(key);
+                int usercontentnum = Integer.parseInt(value);
 
                 if("삭제".equals(command)){
                     postService.deletePostDTO(usercontentnum);
